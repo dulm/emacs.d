@@ -11,7 +11,11 @@
 (setq load-path (cons "~/.emacs.d/config/lang" load-path))
 
 (require 'init-lua-mode)
-(require 'init-cc-mode)
+;;(require 'init-cc-mode)
+(require 'c-settings)
 (require 'init-cmake-mode)
+(require 'sh-mode-settings)
+(require 'sgml-mode-settings)
+(require 'sql-settings)
 
 (provide 'lqk-lang)

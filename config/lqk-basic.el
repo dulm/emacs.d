@@ -121,9 +121,7 @@
 (global-set-key [(control ,)] 'goto-last-change)
 (global-set-key [(control .)] 'goto-last-change-reverse)
 
-;;自动括号引号
-(require 'autopair)
-(setq autopair-autowrap t);;由于开启了替换选中区域，暂时没用
+
 
 ;;其他编辑器修改了的buffer，全部重新载入
 (defun revert-all-buffers ()

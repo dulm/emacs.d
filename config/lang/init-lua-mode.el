@@ -4,12 +4,6 @@
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
-;;使-字符属于单词一部分
-(defun change-major-mode-hook ()
-  (modify-syntax-entry ?_ "w"))
-(change-major-mode-hook)
-(add-hook 'lua-mode-hook 'change-major-mode-hook) 
-
 
 ;;--------------------------------------------------------------------
 ;; Lua-mode 
@@ -36,14 +30,14 @@
 (add-hook 'lua-mode-hook
           (lambda ()
 			(setq lua-indent-level 4)
-			(auto-complete-mode)
-			(hs-minor-mode)
 			(turn-on-font-lock)
 			(local-set-key [f5] 'lua-send-buffer-with-emacs-enviroment)
 		    ;; 在行末尾添加";"号并换行缩进
 			(local-set-key (kbd "M-q") 'line-end-with-sem-and-newline-indent-ex)
 			(local-set-key (kbd "M-SPC") 'insert-newline-and-indent)
 
+			;;使-字符属于单词一部分 etag
+			(modify-syntax-entry ?_ "w")
 			)
 		  )
 

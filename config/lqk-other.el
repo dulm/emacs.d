@@ -39,14 +39,12 @@ directory, select directory. Lastly the file is opened."
 
 
 ;;yasnippet
-;;(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 ;; (require 'yasnippet)
 ;; (setq yas/snippet-dirs '("~/.emacs.d/plugins/yasnippet/snippets" "~/.emacs.d/plugins/yasnippet/extras/imported"))
 ;; (yas/global-mode 1)
 
 
 ;;ecb
-(add-to-list 'load-path (concat plugin-path "ecb"))
 (require 'ecb)
 (require 'ecb-autoloads)
 (custom-set-variables
@@ -89,7 +87,6 @@ directory, select directory. Lastly the file is opened."
 ;;(global-set-key "\C-\M-r" 'open-resource)
 
 ;;icicle
-;(add-to-list 'load-path "~/.emacs.d/plugins/icicles")
 ;(require 'icicles)
 
 (provide 'lqk-other)
