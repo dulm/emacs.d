@@ -17,5 +17,5 @@
 (require 'sh-mode-settings)
 (require 'sgml-mode-settings)
 (require 'sql-settings)
-
+(require 'init-haxe-mode)
 (provide 'lqk-lang)
