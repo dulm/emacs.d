@@ -58,19 +58,22 @@ ARCHIVE is the string name of the package archive.")
 (add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/"))
 
 
+
+
 ;;------------------------------------------------------------------------------
 ;; Also use Melpa for some packages built straight from VC
 ;;------------------------------------------------------------------------------
-
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 
 ;; Only take certain packages from Melpa
-(setq package-filter-function
-      (lambda (package version archive)
-        (or (not (string-equal archive "melpa"))
-            (memq package '(magit rvm slime mmm-mode dired+ csv-mode
-                                  pretty-mode darcsum org-fstree textile-mode
-                                  ruby-mode js3 git-blame todochiku)))))
+;; (setq package-filter-function
+;;       (lambda (package version archive)
+;;         (or (not (string-equal archive "melpa"))
+;;             (memq package '(magit rvm slime mmm-mode dired+ csv-mode
+;;                                   pretty-mode darcsum org-fstree textile-mode
+;;                                   ruby-mode js3 git-blame todochiku
+;; 								  auto-complete-clang)))))
 
 
 (defadvice package-download-transaction
@@ -91,8 +94,27 @@ ARCHIVE is the string name of the package archive.")
 (require-package 'autopair)
 (require-package 'cmake-mode)
 (require-package 'magit)
-;; (require-package 'ecb)
-;;(require-package 'yasnippet)
+
+(require-package 'highlight-parentheses)
+(require-package 'mic-paren)
+
+(require-package 'tabbar)
+(require-package 'haxe-mode)
+(require-package 'auto-complete-clang)
+
+(require-package 'highlight-symbol)
+(require-package 'ecb)
+(require-package 'yasnippet)
+(require-package 'icicles)
+(require-package 'goto-chg)
+(require-package 'gtags)
+(require-package 'emacs-eclim)
+
+(require-package 'fuzzy)
+(require-package 'popup)
+(require-package 'auto-complete);auto-complete is dependent on fuzzy popup
+
+(require-package 'tree-mode)
 
 
 ;; (require-package 'all)
